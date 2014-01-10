@@ -72,7 +72,7 @@
 				try {
 					var f = (state ? onFulfilled : onRejected);
 					if (isFunction(f)) {
-						var r = f.apply(null, values);
+						var r = f.apply(void 0, values);
 						if (r && isFunction(r.then))
 							r.then(function(value){newPromise(true,[value]);}, function(value){newPromise(false,[value]);});
 						else
